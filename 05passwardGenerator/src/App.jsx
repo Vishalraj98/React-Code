@@ -10,7 +10,8 @@ function App() {
 
   //useRef hook
   const passwordRef = useRef(null)
-
+// here we write a logic in it
+// use callback  
   const passwordGenerator = useCallback(() => {
     let pass = ""
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
@@ -30,7 +31,7 @@ function App() {
 
   const copyPasswordToClipboard = useCallback(() => {
     passwordRef.current?.select();
-    passwordRef.current?.setSelectionRange(0, 999);
+    passwordRef.current?.setSelectionRange(0,999);
     window.navigator.clipboard.writeText(password)
   }, [password])
 
@@ -61,7 +62,7 @@ function App() {
         <input 
         type="range"
         min={6}
-        max={100}
+        max={40}
         value={length}
          className='cursor-pointer'
          onChange={(e) => {setLength(e.target.value)}}
